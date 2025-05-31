@@ -1,59 +1,53 @@
-# ArabicToRomanConverter
+# Arabic to Roman Converter
 
-[![version](https://img.shields.io/badge/version-1.0.0-yellow.svg)](https://semver.org)
+[![version](https://img.shields.io/badge/version-1.0.1-yellow.svg)](https://semver.org)
 [![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin)
+[![Build](https://github.com/rkociniewski/bracket-checker/actions/workflows/main.yaml/badge.svg)](https://github.com/rkociniewski/bracket-checker/actions/workflows/main.yaml)
+[![codecov](https://codecov.io/gh/rkociniewski/bracket-checker/branch/main/graph/badge.svg)](https://codecov.io/gh/rkociniewski/bracket-checker)
+[![Kotlin](https://img.shields.io/badge/Kotlin-2.1.21-blueviolet?logo=kotlin)](https://kotlinlang.org/)
+[![Gradle](https://img.shields.io/badge/Gradle-8.14.1-blue?logo=gradle)](https://gradle.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-greem.svg)](https://opensource.org/licenses/MIT)
 
-Application for converting arabiccd numbers to roman numbers.
+A simple Kotlin library to convert Arabic integers to their Roman numeral representation.
 
-## Getting started
+## Features
 
-First, you need to ensure you have these applications:
+- Converts individual integers to Roman numerals
+- Extension functions for `Int`, `Set<Int>`, and `List<Int>`
+- Duplicate elimination when converting collections
+- Minimal and idiomatic Kotlin API
 
-- [GIT](https://git-scm.com/) — GIT isn't necessary, but is better to have installed
-- IDE (I prefer [IntelliJ IDEA](https://www.jetbrains.com/idea/)) — It isn't necessary, but in IDE you can look up code
-  quicker and nicer.
-- [Gradle](https://gradle.org/) - necessary to build a project, sometimes IDE have it pre-installed.
-- [Java JDK](https://www.oracle.com/java/technologies/downloads/#java11) - This one is mandatory ;)
+## Usage
 
-You can download a project in two ways:
+### Convert a single number:
 
-- By GIT, typing in console this command:
+```kotlin
+val roman = 1987.toRoman() // "MCMLXXXVII"
+````
 
- ```
-git clone git@gitlab.com:powermilk-default/reverse-words.git
- ```
+### Convert a set of integers:
 
-If you decide to use this one, I assume you know the basics of GIT
-
-- By download ZIP file. You need to just
-  download [this file](https://gitlab.com/powermilk-default/reverse-words/-/archive/master/reverse-words.zip).
-
-## Prerequisites
-
-You can build this project with [Gradle](https://gradle.org/), so dependencies are automatically downloaded and
-imported, but for your information I listed what technologies are used in this repository:
-
-Code:
-
-- [Java JDK](https://www.java.com/pl/download/) - If you want to develop this application, you will
-  need [JDK](https://www.oracle.com/java/technologies/downloads/#java11).
-  Java is a programming language what I used to write this program.
-
-Testing
-
-- [JUnit 5](https://junit.org/junit5) - The testing Framework.
-
-## Running application
-
-This application just presents a solution to some issue, and it can be run itself. It doesn't have `main()` method.
-
-## Running the tests
-
-I use Gradle, so you can run test with this command:
-
+```kotlin
+val numbers = setOf(3, 4, 9)
+val romanList = numbers.toRoman() // ["III", "IV", "IX"]
 ```
-gradle test
+
+### Convert a list (duplicates removed):
+
+```kotlin
+val numbers = listOf(5, 5, 10, 1)
+val romanList = numbers.toRoman() // ["V", "X", "I"]
+```
+
+## Notes
+
+* Values ≤ 0 return an empty string.
+* Collections are deduplicated using `Set`.
+
+## License
+
+MIT
+
 ```
 
 ## Built With
