@@ -46,9 +46,7 @@ val romanList = numbers.toRoman() // ["V", "X", "I"]
 
 ## License
 
-MIT
-
-```
+This project is licensed under the MIT License.
 
 ## Built With
 
@@ -60,4 +58,4 @@ We use [SemVer](http://semver.org/) for versioning.
 
 ## Authors
 
-* **Rafał Kociniewski** - [PowerMilk](https://gitlab.com/rafal.kociniewski)
+* **Rafał Kociniewski** - [PowerMilk](https://github.com/rkociniewski)
